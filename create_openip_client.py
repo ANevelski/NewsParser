@@ -8,6 +8,7 @@ def create_openip_client():
             api_version = "2024-12-01-preview"
             subscription_key = os.getenv("AZURE_OPENAPI_KEY")
 
+            # Creating AI client
             client = AzureOpenAI(
                 api_version=api_version,
                 azure_endpoint=endpoint,
@@ -15,5 +16,5 @@ def create_openip_client():
             )
             return client
         except Exception as e:
-            print(f"Error during summarization: {e}")
+            print(f"Error during creating AI client: {e}")
         return None

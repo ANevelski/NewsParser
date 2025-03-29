@@ -1,7 +1,7 @@
+# Settings of needed libs
 beautifulsoup4 
 requests 
 openai 
 langchain-community 
 langchain-openai
-faiss-cpu 
-tiktoken
+faiss-cpu
