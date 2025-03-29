@@ -7,7 +7,7 @@ from uuid import uuid4
 from langchain_core.documents import Document
 
 # Function for creating vector database file
-def save_to_vector_database(articles): 
+def save_to_vector_database_file(articles): 
     try: 
         # Initialize embeddings
         subscription_key = os.getenv("AZURE_OPENAPI_KEY")
@@ -28,11 +28,11 @@ def save_to_vector_database(articles):
 
         # Looping through a list of objects (JSON array)
         for item in articles:
-                document = Document(
-                    page_content=item['summary'],
-                    metadata={"topics": item['topics']},
-                )
-                documents.append(document)
+            document = Document(
+                page_content=item['summary'],
+                metadata={"topics": item['topics']},
+            )
+            documents.append(document)
 
         # Save data to file        
         uuids = [str(uuid4()) for _ in range(len(documents))]
@@ -40,6 +40,6 @@ def save_to_vector_database(articles):
         file_name = "News_faiss_index"
         vector_store.save_local(file_name)
         return file_name
-    except Exception as e:
-        print(f"Error during savING to vector database file: {e}")
+    except Exception:
+        print(f"Error during saving to vector database file. No data to save.")
         return None

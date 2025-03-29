@@ -19,6 +19,7 @@ def scrape_article(url):
 
         # counter = 0 #temp solution for test
         # Loop through each h2 and find the first following p tag
+        counter = 0
         for h2 in h2_tags:
             h2_text = h2.get_text(strip=True)  # Get the text content of the h2 tag
             next_p = h2.find_next('p')  # Find the next <p> tag following the h2 tag
@@ -31,9 +32,11 @@ def scrape_article(url):
 
             # Create a dictionary for JSON
             item = {
+                "id": counter,
                 "headline": h2_text,
                 "content": p_text
             }
+            counter+=1
 
             # Add the object to the list
             results.append(item)
