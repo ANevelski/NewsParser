@@ -1,7 +1,7 @@
 # Function for displaying results
 def print_articles(articles):
     for item in articles:
-        print(f"Headline {item['id']+1}: {item['headline']}")
+        print(f"Headline {item['id']}: {item['headline']}")
         print(f"Content: {item['content']}")   
         summary_value = item.get("summary")
         if summary_value is not None:    

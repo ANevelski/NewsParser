@@ -3,7 +3,7 @@ from langchain_openai import AzureOpenAIEmbeddings
 from langchain_community.vectorstores import FAISS
 
 # Function for perform search from vector DataBase file
-def similarity_search(file_name):
+def similarity_search(file_name, search_question):
     try:
           # Initialize embeddings
           subscription_key = os.getenv("AZURE_OPENAPI_KEY")
@@ -14,8 +14,8 @@ def similarity_search(file_name):
 
           # Search for the text    
           results = vector_store.similarity_search(
-               "Do you have some BBC news?",
-               k=5
+               search_question,
+               k=5 # Number of Nearest Neighbors - Specifies how many of the closest objects/elements (based on similarity) should be returned as search results.
           )
           return results
     except Exception:

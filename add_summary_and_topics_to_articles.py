@@ -1,4 +1,3 @@
-
 # Function to find article by Id
 def get_item_by_id(articles, item_id):
     for article in articles:
