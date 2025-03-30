@@ -39,8 +39,8 @@ This project provides a complete pipeline for extracting, summarizing, and seman
   Create a .env file in the root directory and specify the following keys:
     ```bash
     AZURE_OPENAPI_KEY={your Azure Resource Group API Key (Keys and Endpoint)}
-    NEWS_SITE_URL={URL of the news website. Example: https://www.bbc.com/news} - A site should follows this structure for articles: Headlines in **<h2>** tags. Article text in **<p>** tags.
-    USER_QUESTION_FOR_SEARCH={User query for semantic search, e.g., "Myanmar news"}
+    NEWS_SITE_URL={URL of the news website. Example: https://www.bbc.com/news} - A site should follows this articles structure: Headlines wrapped by H2 tags. The articles text wrapped by P tags.
+    USER_QUESTION_FOR_SEARCH={User query of semantic search, e.g., "Myanmar news"}
 
 ### Azure Models
 Make sure the following models are enabled in Azure OpenAI services:
