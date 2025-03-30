@@ -41,12 +41,15 @@ This project provides a complete pipeline for extracting, summarizing, and seman
     AZURE_OPENAPI_KEY={your Azure Resource Group API Key (Keys and Endpoint)}
     NEWS_SITE_URL={URL of the news website. Example: https://www.bbc.com/news}
     USER_QUESTION_FOR_SEARCH={User query for semantic search, e.g., "Myanmar news"}
+
 ### Azure Models
 Make sure the following models are enabled in Azure OpenAI services:
     ```bash
     gpt-4o
     text-embedding-3-large
+
 ### Vector Database
   The vector data for articles (summaries, topics) is stored in a local file named **"News_faiss_index"**. Ensure the application has sufficient permissions to create and write to this file.
+  
 ### Application Entry Point
   The main script for the application is app.py.
