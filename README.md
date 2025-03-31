@@ -43,10 +43,7 @@ This project provides a complete pipeline for extracting, summarizing, and seman
     USER_QUESTION_FOR_SEARCH={User query of semantic search, e.g., "Myanmar news"}
 
 ### Azure Models
-Make sure the following models are enabled in Azure OpenAI services:
-    ```bash
-    gpt-4o
-    text-embedding-3-large
+Make sure the following models are enabled in Azure OpenAI services: **gpt-4o**, **text-embedding-3-large**
 
 ### Vector Database
   The vector data for articles (summaries, topics) is stored in a local file named **"News_faiss_index"**. Ensure the application has sufficient permissions to create and write to this file.
